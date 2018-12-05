@@ -1,7 +1,11 @@
 package com.cumulations.fragmentdemo;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,6 +33,12 @@ public class FragmentA extends Fragment {
         editText=view.findViewById(R.id.editText);
         button=view.findViewById(R.id.button);
 
+        String var= null;
+        if (savedInstanceState != null) {
+            var = savedInstanceState.getString("msz");
+            editText.setText(var);
+        }
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,6 +48,12 @@ public class FragmentA extends Fragment {
         });
 
         return view;
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("msz",editText.getText().toString());
     }
 
     public void updateEditText(CharSequence newText){

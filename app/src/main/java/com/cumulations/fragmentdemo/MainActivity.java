@@ -3,7 +3,7 @@ package com.cumulations.fragmentdemo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity implements FragmentA.FragmentAListener,FragmentB.FragmentBListener {
+public class MainActivity extends AppCompatActivity implements FragmentA.FragmentAListener, FragmentB.FragmentBListener {
 
     private FragmentA fragmentA;
     private FragmentB fragmentB;
@@ -13,12 +13,12 @@ public class MainActivity extends AppCompatActivity implements FragmentA.Fragmen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        fragmentA=new FragmentA();
-        fragmentB=new FragmentB();
+        fragmentA = new FragmentA();
+        fragmentB = new FragmentB();
 
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.container_a,fragmentA)
-                .add(R.id.container_b,fragmentB)
+                .add(R.id.container_a, fragmentA)
+                .add(R.id.container_b, fragmentB)
                 .commit();
     }
 
