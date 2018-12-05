@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">FragmentDemo</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fragmenta">FragmentA</string>
+    <string name="type">Enter Your Message</string>
+    <string name="send_msz">Send Msz</string>
+    <string name="fragmentb">FragmentB</string>
+</resources>
